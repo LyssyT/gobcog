@@ -4327,7 +4327,7 @@ class Adventure(commands.Cog):
                     pet_choices = list(pet_list.keys())
                     pet = random.choice(pet_choices)
                     roll = random.randint(1, 50)
-                    dipl_value = c.total_cha + (c.total_int // 3) + (c.luck // 2)
+                    dipl_value = c.total_cha + c.total_int + (c.luck // 2)
                     pet_reqs = pet_list[pet].get("bonuses", {}).get("req", {})
                     pet_msg4 = ""
                     can_catch = True
@@ -4565,7 +4565,7 @@ class Adventure(commands.Cog):
                     if good:
                         await smart_embed(
                             ctx,
-                            _("{skill} **{c}** is focusing on the monster ahead...{skill}").format(
+                            _("{skill} **{c}** is finding the monster's weak spot {skill}").format(
                                 c=self.escape(ctx.author.display_name), skill=self.emojis.skills.psychic,
                             ),
                         )
@@ -4715,7 +4715,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is starting to froth at the mouth... {skill}").format(
+                        _("{skill} **{c}** is starting to froth at the mouth while shouting BLODD, DEATH, AND VENGENCE!!! {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.berserker,
                         ),
                     )
@@ -4763,7 +4763,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is focusing all of their energy... {skill}").format(
+                        _("{skill} **{c}** is casting Magic Missle at... the Darkness {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.wizzard,
                         ),
                     )
@@ -4810,7 +4810,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is whipping up a performance... {skill}").format(
+                        _("{skill} **{c}** is charming the monster with a lovely tune {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.bard
                         ),
                     )
@@ -6343,7 +6343,7 @@ class Adventure(commands.Cog):
                 )
 
             if persuaded:
-                text = _("{b_talkers} almost died in battle, but confounded the {chall} in the last second.").format(
+                text = _("{b_talkers} almost died in battle, but managed to make the {chall} bow in submission.").format(
                     b_talkers=talkers_final_string, chall=session.challenge
                 )
                 text += await self._reward(
@@ -6394,9 +6394,9 @@ class Adventure(commands.Cog):
                     if loss_list:
                         self._loss_message[ctx.message.id] = humanize_list(loss_list).strip()
                 options = [
-                    _("No amount of diplomacy or valiant fighting could save you."),
-                    _("This challenge was too much for one hero."),
-                    _("You tried your best, but the group couldn't succeed at their attempt."),
+                    _("Oh... Well fuck..."),
+                    _("You got FUCKED."),
+                    _("You tried your best, but too bad you're USELESS"),
                 ]
                 text = random.choice(options)
         else:
@@ -6433,7 +6433,7 @@ class Adventure(commands.Cog):
                     if len(magic_list) > 0 and len(fight_list) > 0:
                         text = _(
                             "{b_fighters} slayed the {chall} "
-                            "in battle, while {b_talkers} distracted with flattery, "
+                            "in battle, while {b_talkers} distracted with their tits, "
                             "{b_wizard} chanted magical incantations and "
                             "{b_preachers} aided in {god}'s name."
                         ).format(
@@ -6448,7 +6448,7 @@ class Adventure(commands.Cog):
                         group = fighters_final_string if len(fight_list) > 0 else wizards_final_string
                         text = _(
                             "{b_group} slayed the {chall} "
-                            "in battle, while {b_talkers} distracted with flattery and "
+                            "in battle, while {b_talkers} distracted with a bit of a panty shot and "
                             "{b_preachers} aided in {god}'s name."
                         ).format(
                             b_group=group,
@@ -6461,7 +6461,7 @@ class Adventure(commands.Cog):
                     if len(magic_list) > 0 and len(fight_list) > 0:
                         text = _(
                             "{b_fighters} slayed the {chall} "
-                            "in battle, while {b_talkers} distracted with insults and "
+                            "in battle, while {b_talkers} distracted with Fuck me eyes and "
                             "{b_wizard} chanted magical incantations."
                         ).format(
                             b_fighters=fighters_final_string,
@@ -6472,7 +6472,7 @@ class Adventure(commands.Cog):
                     else:
                         group = fighters_final_string if len(fight_list) > 0 else wizards_final_string
                         text = _(
-                            "{b_group} slayed the {chall} in battle, while {b_talkers} distracted with insults."
+                            "{b_group} slayed the {chall} in battle, after {b_talkers} talked it into sumbission."
                         ).format(b_group=group, chall=session.challenge, b_talkers=talkers_final_string)
                 text += await self._reward(
                     ctx,
@@ -6488,7 +6488,7 @@ class Adventure(commands.Cog):
                         b_talkers=talkers_final_string, chall=session.challenge, b_preachers=preachermen_final_string,
                     )
                 else:
-                    text = _("{b_talkers} talked the {chall} down.").format(
+                    text = _("{b_talkers} talked the {chall} into bed.").format(
                         b_talkers=talkers_final_string, chall=session.challenge
                     )
                 text += await self._reward(
@@ -6566,9 +6566,9 @@ class Adventure(commands.Cog):
                             else:
                                 await bank.set_balance(user, 0)
                 options = [
-                    _("No amount of diplomacy or valiant fighting could save you."),
-                    _("This challenge was too much for the group."),
-                    _("You tried your best, but couldn't succeed."),
+                    _("Oh... Well fuck..."),
+                    _("You got FUCKED"),
+                    _("You tried your best, but too bad your're USELESS"),
                 ]
                 text = random.choice(options)
         loss_list = []
