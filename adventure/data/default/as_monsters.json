@@ -1647,7 +1647,7 @@
         "image": "https://cdn.pixabay.com/photo/2017/04/24/10/05/monster-2255973_960_720.png",
         "boss": false,
         "miniboss": {
-            "requirements": ["members", 6],
+            "requirements": ["members", 2],
             "defeat": "The Hydra tore everyone in six.",
             "special": "extra head"
         },
