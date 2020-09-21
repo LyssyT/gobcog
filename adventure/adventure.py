@@ -4063,7 +4063,7 @@ class Adventure(commands.Cog):
             roll = random.randint(max(1, min_roll * 2), 50) if admin_roll == -1 else admin_roll
             if self.is_dev(nega_member):
                 roll = -2
-            versus = random.randint(10, 60)
+            versus = random.randint(10, 40)
             xp_mod = random.randint(1, 10)
             daymult = self._daily_bonus.get(str(datetime.today().isoweekday()), 0)
             xp_won = int((offering / xp_mod))
