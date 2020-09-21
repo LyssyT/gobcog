@@ -6568,7 +6568,7 @@ class Adventure(commands.Cog):
                 options = [
                     _("Oh... Well fuck..."),
                     _("You got FUCKED"),
-                    _("You tried your best, but too bad your're USELESS"),
+                    _("You tried your best, but too bad you're USELESS"),
                 ]
                 text = random.choice(options)
         loss_list = []
