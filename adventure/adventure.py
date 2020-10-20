@@ -3553,7 +3553,7 @@ class Adventure(commands.Cog):
                 "ability": False,
                 "desc": _(
                     "Bards can perform to aid their comrades in diplomacy.\n"
-                    "Use the music command when being diplomatic in an adventure."
+                    "Use the slut command when being diplomatic in an adventure."
                 ),
                 "cooldown": time.time(),
             },
@@ -4780,7 +4780,7 @@ class Adventure(commands.Cog):
                     )
 
     @commands.command()
-    async def music(self, ctx: commands.Context):
+    async def slut(self, ctx: commands.Context):
         """[Bard Class Only]
 
         This allows a Bard to add substantial diplomacy bonuses for one battle.
@@ -6163,16 +6163,16 @@ class Adventure(commands.Cog):
         diplo_str = ""
         if dmg_dealt > 0:
             damage_str = _("The group {status} **{challenge}** **({result}/{int_hp})**.\n").format(
-                status=_("hit the") if failed or not slain else _("killed the"),
+                status=_("hit the") if failed or not slain else _("slaughtered"),
                 challenge=challenge,
                 result=humanize_number(dmg_dealt),
                 int_hp=humanize_number(hp),
             )
         if diplomacy > 0:
             diplo_str = _("The group {status} the **{challenge}** with {how} **({diplomacy}/{int_dipl})**.\n").format(
-                status=_("tried to persuade") if not persuaded else _("distracted"),
+                status=_("tried to seduce") if not persuaded else _("seduced"),
                 challenge=challenge,
-                how=_("flattery") if failed or not persuaded else _("insults"),
+                how=_("her slutiness, but it was a little to successful") if failed or not persuaded else _("her tits and ass"),
                 diplomacy=humanize_number(diplomacy),
                 int_dipl=humanize_number(dipl),
             )
@@ -6343,7 +6343,7 @@ class Adventure(commands.Cog):
                 )
 
             if persuaded:
-                text = _("{b_talkers} almost died in battle, but managed to make the {chall} bow in submission.").format(
+                text = _("{b_talkers} almost died in battle, but managed to take all of {chall}.").format(
                     b_talkers=talkers_final_string, chall=session.challenge
                 )
                 text += await self._reward(
@@ -6396,7 +6396,7 @@ class Adventure(commands.Cog):
                 options = [
                     _("Oh... Well fuck..."),
                     _("You got FUCKED."),
-                    _("You tried your best, but too bad you're USELESS"),
+                    _("You tried your best, but now you're its toy"),
                 ]
                 text = random.choice(options)
         else:
@@ -6568,7 +6568,7 @@ class Adventure(commands.Cog):
                 options = [
                     _("Oh... Well fuck..."),
                     _("You got FUCKED"),
-                    _("You tried your best, but too bad you're USELESS"),
+                    _("You tried your best, but now you're its toy"),
                 ]
                 text = random.choice(options)
         loss_list = []
