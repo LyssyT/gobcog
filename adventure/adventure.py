@@ -4810,7 +4810,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is charming the monster with a lovely tune {skill}").format(
+                        _("{skill} **{c}** is charming the monster with her skimpy outfit {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.bard
                         ),
                     )
@@ -6472,7 +6472,7 @@ class Adventure(commands.Cog):
                     else:
                         group = fighters_final_string if len(fight_list) > 0 else wizards_final_string
                         text = _(
-                            "{b_group} slayed the {chall} in battle, after {b_talkers} distracted with their tits."
+                            "{b_group} slayed the {chall} in battle, after {b_talkers} distracted with her tits."
                         ).format(b_group=group, chall=session.challenge, b_talkers=talkers_final_string)
                 text += await self._reward(
                     ctx,
