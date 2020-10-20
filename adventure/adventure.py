@@ -6163,7 +6163,7 @@ class Adventure(commands.Cog):
         diplo_str = ""
         if dmg_dealt > 0:
             damage_str = _("The group {status} **{challenge}** **({result}/{int_hp})**.\n").format(
-                status=_("hit the") if failed or not slain else _("slaughtered"),
+                status=_("hit the") if failed or not slain else _("slaughtered the"),
                 challenge=challenge,
                 result=humanize_number(dmg_dealt),
                 int_hp=humanize_number(hp),
