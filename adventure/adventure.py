@@ -6461,7 +6461,7 @@ class Adventure(commands.Cog):
                     if len(magic_list) > 0 and len(fight_list) > 0:
                         text = _(
                             "{b_fighters} slayed the {chall} "
-                            "in battle, while {b_talkers} distracted with Fuck me eyes and "
+                            "in battle, while {b_talkers} distracted it with 'Fuck me' eyes and "
                             "{b_wizard} chanted magical incantations."
                         ).format(
                             b_fighters=fighters_final_string,
@@ -6472,7 +6472,7 @@ class Adventure(commands.Cog):
                     else:
                         group = fighters_final_string if len(fight_list) > 0 else wizards_final_string
                         text = _(
-                            "{b_group} slayed the {chall} in battle, after {b_talkers} talked it into sumbission."
+                            "{b_group} slayed the {chall} in battle, after {b_talkers} distracted with their tits."
                         ).format(b_group=group, chall=session.challenge, b_talkers=talkers_final_string)
                 text += await self._reward(
                     ctx,
