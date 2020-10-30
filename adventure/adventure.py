@@ -176,7 +176,7 @@ class AdventureResults:
         # damage
         if ctx.guild.id not in self._last_raids:
             self._last_raids[ctx.guild.id] = []
-        SOLO_RAID_SCALE = 0.25
+        SOLO_RAID_SCALE = 0.15
         if len(self._last_raids.get(ctx.guild.id, [])) == 0:
             return {"stat_type": "hp", "min_stat": 0, "max_stat": 0}
 
@@ -219,7 +219,7 @@ class AdventureResults:
             max_stat = avg_amount * 2
             # want win % to be at least 50%, even when solo
             # if win % is below 50%, scale back min/max for easier mons
-            if win_percent < 0.5:
+            if win_percent < 0.75:
                 min_stat = avg_amount * win_percent
                 max_stat = avg_amount * 1.5
 
@@ -3553,7 +3553,7 @@ class Adventure(commands.Cog):
                 "ability": False,
                 "desc": _(
                     "Bards can perform to aid their comrades in diplomacy.\n"
-                    "Use the slut command when being diplomatic in an adventure."
+                    "Use the moan command when being diplomatic in an adventure."
                 ),
                 "cooldown": time.time(),
             },
@@ -4780,7 +4780,7 @@ class Adventure(commands.Cog):
                     )
 
     @commands.command()
-    async def slut(self, ctx: commands.Context):
+    async def moan(self, ctx: commands.Context):
         """[Bard Class Only]
 
         This allows a Bard to add substantial diplomacy bonuses for one battle.
@@ -4810,7 +4810,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is charming the monster with her skimpy outfit {skill}").format(
+                        _("{skill} **{c}** is tyring to seduce the monster {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.bard
                         ),
                     )
