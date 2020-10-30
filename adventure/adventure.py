@@ -4810,7 +4810,7 @@ class Adventure(commands.Cog):
                     await self.config.user(ctx.author).set(await c.to_json(self.config))
                     await smart_embed(
                         ctx,
-                        _("{skill} **{c}** is tyring to seduce the monster {skill}").format(
+                        _("{skill} **{c}** is trying to seduce the monster {skill}").format(
                             c=self.escape(ctx.author.display_name), skill=self.emojis.skills.bard
                         ),
                     )
