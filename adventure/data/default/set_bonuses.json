@@ -90,7 +90,7 @@
         {"parts": 5, "att": 10000, "cha": 0, "int": 0, "dex": 0, "luck": 0, "statmult": 50, "xpmult": 10, "cpmult": 1}
     ],
     "Valkyrie": [
-        {"parts": 9, "att": 500, "cha": 500, "int": 0, "dex": 100, "luck": 100, "statmult": 900, "xpmult": 4, "cpmult": 2}
+        {"parts": 9, "att": 500, "cha": 500, "int": 0, "dex": 100, "luck": 100, "statmult": 9000, "xpmult": 4, "cpmult": 2}
     ],
     "Pendragon": [
         {"parts": 7, "att": 250, "cha": 250, "int": 0, "dex": 100, "luck": 100, "statmult": 70, "xpmult": 2, "cpmult": 2}
